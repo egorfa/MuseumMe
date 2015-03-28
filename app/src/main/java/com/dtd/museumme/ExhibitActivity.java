@@ -4,8 +4,12 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
+import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
 /**
  * Created by 123 on 28.03.2015.
@@ -25,7 +29,29 @@ public class ExhibitActivity extends Activity {
         text = (TextView)findViewById(R.id.exhibitText);
         img = (ImageView)findViewById(R.id.exhibitImg);
 
+
+        com.gc.materialdesign.views.Button icon = (com.gc.materialdesign.views.Button) findViewById(R.id.button);
+
+        SubActionButton.Builder itemBuilder = new SubActionButton.Builder(this);
+// repeat many times:
+        Button itemAudio = new Button(this);
+        //itemAudio.setBackground(getResources().getDrawable(R.drawable.pin));
+        SubActionButton button1 = itemBuilder.setContentView(itemAudio).build();
+
+        Button itemVideo = new Button(this);
+        //itemVideo.setBackground(getResources().getDrawable(R.drawable.play_icon));
+        SubActionButton button2 = itemBuilder.setContentView(itemVideo).build();
+
+
+        FloatingActionMenu actionMenu = new FloatingActionMenu.Builder(this)
+                .addSubActionView(button1)
+                .addSubActionView(button2)
+                .attachTo(icon)
+                .build();
+
         //setActionBar();
+
+
 
         exhibit = getIntent().getParcelableExtra("Object");
 

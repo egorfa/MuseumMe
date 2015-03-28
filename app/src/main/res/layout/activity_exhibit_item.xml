@@ -54,4 +54,15 @@
 
     </com.nirhart.parallaxscroll.views.ParallaxScrollView>
 
+    <com.gc.materialdesign.views.ButtonFloat
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="24dp"
+        android:background="#1E88E5"
+        app:animate="true"
+        app:iconDrawable="@drawable/play_icon" />
+
 </RelativeLayout>
