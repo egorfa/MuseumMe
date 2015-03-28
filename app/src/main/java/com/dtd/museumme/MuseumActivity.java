@@ -58,17 +58,22 @@ public class MuseumActivity extends SherlockFragmentActivity {
         Fragment currentFragment = fragmentManager.findFragmentById(R.id.container);
         switch (position) {
             case 0:
-                //Новости
+                //Список экспонатов первого этажа
                 if (!(currentFragment instanceof ListExhibit)) {
                     showFragment(new ListExhibit());
                 }
                 break;
             case 1:
-                //Расписание
 
                 break;
             case 2:
-                //Результаты
+
+                break;
+            case 3:
+                //Настройки
+                if (!(currentFragment instanceof FragmentSettings)) {
+                    showFragment(new FragmentSettings());
+                }
                 break;
         }
     }

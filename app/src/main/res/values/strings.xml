@@ -8,9 +8,7 @@
         <item>1 Этаж</item>
         <item>2 Этаж</item>
         <item>3 Этаж</item>
-        <item>4 Этаж</item>
-        <item>5 Этаж</item>
-        <item>6 Этаж</item>
+        <item>Настройки</item>
     </string-array>
 
 </resources>
