@@ -28,5 +28,6 @@ dependencies {
     compile 'com.github.nirhart:parallaxscroll:1.0'
     compile 'com.github.navasmdc:MaterialDesign:1.+'
     compile 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
+    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
     //compile files('E:/Projects/работа/Android/Work/MuseumMe2/lib/SlidingMenu/libs/android-support-v4.jar')
 }

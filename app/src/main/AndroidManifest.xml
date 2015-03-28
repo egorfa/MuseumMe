@@ -23,11 +23,18 @@
             android:name=".EnterKeyActivity"
             android:label="EnterKeyActivity">
 
+        </activity>
+
+        <activity
+            android:name=".TabsActivity"
+            android:label="MuseumsActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
     </application>
