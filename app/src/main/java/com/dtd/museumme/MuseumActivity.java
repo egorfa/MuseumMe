@@ -2,6 +2,10 @@ package com.dtd.museumme;
 
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -37,7 +41,53 @@ public class MuseumActivity extends SherlockFragmentActivity {
         MenuListAdapter adapter = new MenuListAdapter(this, R.layout.menu_list_item, MenuItemTitles);
         MenuList.setAdapter(adapter);
 
-        // i'm a test commit
+        MenuList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                menuToggle();
+                changeFragment(position);
+            }
+        });
+
+
+
+    }
+
+    private void changeFragment(int position) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment currentFragment = fragmentManager.findFragmentById(R.id.container);
+        switch (position) {
+            case 0:
+                //Новости
+                if (!(currentFragment instanceof ListExhibit)) {
+                    showFragment(new ListExhibit());
+                }
+                break;
+            case 1:
+                //Расписание
+
+                break;
+            case 2:
+                //Результаты
+                break;
+        }
+    }
+
+    private void showFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, fragment)
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public void menuToggle(){
+        if(menu.isMenuShowing()) {
+            menu.showContent();
+        }
+        else {
+            menu.showMenu();
+        }
     }
 
 }

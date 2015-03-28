@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/RL"
+    android:background="#000">
+
+    <com.twotoasters.jazzylistview.JazzyGridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@android:color/transparent"
+        android:columnWidth="140dp"
+        android:numColumns="2"
+        android:id="@+id/gridView"
+        android:background="@android:color/transparent"
+        app:effect="fade"
+        app:only_animate_new_items="false"
+        app:only_animate_fling="false"
+        app:max_velocity="0"
+        android:visibility="visible" />
+
+    <fr.castorflex.android.circularprogressbar.CircularProgressBar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:indeterminate="true"
+        android:layout_centerInParent="true"
+        android:id="@+id/bar"
+        app:cpb_colors="@array/bar_colors"
+        app:cpb_rotation_speed="1.0"
+        app:cpb_sweep_speed="1.0"
+        app:cpb_stroke_width="4dp"
+        app:cpb_min_sweep_angle="10"
+        app:cpb_max_sweep_angle="300"
+        />
+</RelativeLayout>
