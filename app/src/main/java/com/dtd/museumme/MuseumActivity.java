@@ -37,7 +37,7 @@ public class MuseumActivity extends SherlockFragmentActivity {
         MenuListAdapter adapter = new MenuListAdapter(this, R.layout.menu_list_item, MenuItemTitles);
         MenuList.setAdapter(adapter);
 
-
+        // i'm a test commit
     }
 
 }
