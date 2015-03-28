@@ -18,12 +18,14 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:id="@+id/exhibitImg"/>
+                android:layout_height="350dp"
+                android:id="@+id/exhibitImg"
+                android:scaleType="centerCrop" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@color/black">
 
                 <TextView
                     android:layout_width="wrap_content"

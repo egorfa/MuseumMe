@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -11,12 +12,28 @@ import android.widget.TextView;
  */
 public class ExhibitActivity extends Activity {
 
+    Exhibit exhibit;
+    ImageView img;
+    TextView text, title;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exhibit_item);
 
-        setActionBar();
+        title = (TextView)findViewById(R.id.exhibitTitle);
+        text = (TextView)findViewById(R.id.exhibitText);
+        img = (ImageView)findViewById(R.id.exhibitImg);
+
+        //setActionBar();
+
+        exhibit = getIntent().getParcelableExtra("Object");
+
+        int id = getResources().getIdentifier("contentexample_" + exhibit.getImageExhibit(), "drawable", getPackageName());
+
+        title.setText(exhibit.getTitleExhibit());
+        text.setText(exhibit.getTextExhibit());
+        img.setImageResource(id);
     }
 
     public void setActionBar(){
