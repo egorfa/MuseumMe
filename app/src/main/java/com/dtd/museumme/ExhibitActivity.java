@@ -1,7 +1,7 @@
 package com.dtd.museumme;
 
-import android.app.ActionBar;
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -49,9 +49,6 @@ public class ExhibitActivity extends Activity {
                 .attachTo(icon)
                 .build();
 
-        //setActionBar();
-
-
 
         exhibit = getIntent().getParcelableExtra("Object");
 
@@ -62,13 +59,14 @@ public class ExhibitActivity extends Activity {
         img.setImageResource(id);
     }
 
-    public void setActionBar(){
-        ActionBar actionBar = getActionBar();
-        actionBar.setDisplayShowCustomEnabled(true);
-        View customView = getLayoutInflater().inflate(R.layout.actionbar_center, null);
-        TextView title = (TextView) findViewById(R.id.actionbarTitle);
-        title.setText("Экспонаты");
+    public void setFonts (View view) {
+        final String LIGHT_FONT = "fonts/HelveticaNeueCyr-Light.otf";
+        final String NORMAL_FONT = "fonts/Helv-5-Normal.pfb";
+        final String ITALIC_FONT = "fonts/HelveticaNeueCyr-Italic.otf";
+        final String BOLD_FONT = "fonts/HelveticaNeueCyr-Bold.otf";
 
-        actionBar.setCustomView(customView);
+        Typeface typeface;
+
+        typeface = Typeface.createFromAsset(getAssets(), LIGHT_FONT);
     }
 }
