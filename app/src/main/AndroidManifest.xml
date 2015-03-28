@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ExhibitActivity"
+            android:label="ExhibitActivity">
+
+            </activity>
     </application>
 
 </manifest>
