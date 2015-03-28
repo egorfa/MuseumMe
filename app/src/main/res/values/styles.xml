@@ -1,0 +1,20 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.Sherlock.Light">
+        <item name="actionBarStyle">@style/MyAcBr</item>
+        <item name="android:actionBarStyle">@style/MyAcBr</item>
+    </style>
+
+    <style name="MyAcBr" parent="Widget.Sherlock.Light.ActionBar.Solid.Inverse">
+        <item name="android:icon">@android:color/transparent</item>
+        <item name="icon">@android:color/transparent</item>
+
+        <!--item name="android:background">@drawable/action_bar_bg</item>
+        <item name="background">@drawable/action_bar_bg</item-->
+
+        <item name="android:customNavigationLayout">@layout/actionbar_center</item>
+        <item name="customNavigationLayout">@layout/actionbar_center</item>
+    </style>
+
+</resources>
