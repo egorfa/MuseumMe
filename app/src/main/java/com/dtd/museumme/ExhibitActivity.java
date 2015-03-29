@@ -1,9 +1,9 @@
 package com.dtd.museumme;
 
 import android.app.Activity;
-import android.graphics.Typeface;
+import android.bluetooth.BluetoothAdapter;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -57,15 +57,26 @@ public class ExhibitActivity extends Activity {
         title.setText(exhibit.getTitleExhibit());
         text.setText(exhibit.getTextExhibit());
         img.setImageResource(id);
-    }
 
-        TextView title = (TextView)getActionBar().getCustomView().findViewById(R.id.actionbarTitle);
-        title.setText("Экспонат");
+
+        TextView Title = (TextView)getActionBar().getCustomView().findViewById(R.id.actionbarTitle);
+        Title.setText("Экспонат");
         ImageView leftArrow = (ImageView)getActionBar().getCustomView().findViewById(R.id.btn_menu);
         leftArrow.setBackground(getResources().getDrawable(R.drawable.left_arrow));
 
-        Typeface typeface;
+        //Typeface typeface;
+        //typeface = Typeface.createFromAsset(getAssets(), LIGHT_FONT);
+    }
 
-        typeface = Typeface.createFromAsset(getAssets(), LIGHT_FONT);
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+            mBluetoothAdapter.disable();
+        Intent intent = new Intent(ExhibitActivity.this, MuseumActivity.class);
+        intent.putExtra("1",0);
+        startActivity(intent);
+        finish();
+
     }
 }

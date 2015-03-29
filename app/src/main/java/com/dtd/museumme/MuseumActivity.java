@@ -7,6 +7,7 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ParcelUuid;
@@ -80,16 +81,28 @@ public class MuseumActivity extends SherlockFragmentActivity {
     protected void onResume() {
         super.onResume();
 
-        if (!mBluetoothAdapter.isEnabled()) {
+
+
+        Intent intent = getIntent();
+        int d = intent.getIntExtra("1", 0);
+        Uri data = intent.getData();
+        if(d!=0 && data!=null){
+            Log.d("intent", "HERE");
+            scanLeDevice(false);
+        }else {
+
             if (!mBluetoothAdapter.isEnabled()) {
-                Intent enableBtIntent = new Intent(
-                        BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+                if (!mBluetoothAdapter.isEnabled()) {
+                    Intent enableBtIntent = new Intent(
+                            BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                    startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+                }
             }
+
         }
 
         // Initializes list view adapter.
-        scanLeDevice(true);
+
 
     }
 
@@ -105,8 +118,12 @@ public class MuseumActivity extends SherlockFragmentActivity {
         // User chose not to enable Bluetooth.
         if (requestCode == REQUEST_ENABLE_BT
                 && resultCode == Activity.RESULT_CANCELED) {
-            finish();
+            //finish();
+
+            scanLeDevice(false);
             return;
+        }else{
+            scanLeDevice(true);
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
