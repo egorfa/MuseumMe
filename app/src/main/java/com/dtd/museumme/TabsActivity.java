@@ -49,7 +49,6 @@ public class TabsActivity extends SherlockFragmentActivity {
 
         @Override
         public CharSequence getPageTitle(int position) {
-
             switch (position){
                 case 0:
                     return "Список";
@@ -57,7 +56,7 @@ public class TabsActivity extends SherlockFragmentActivity {
                     return "Карта";
             }
 
-            return "Wrong Tab";
+            return "Wrong Channel";
         }
 
     }

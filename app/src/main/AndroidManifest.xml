@@ -29,12 +29,16 @@
             android:name=".TabsActivity"
             android:label="MuseumsActivity">
 
+        </activity>
+
+        <activity
+            android:name=".SplashScreen"
+            android:label="Museum Me">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
     </application>
