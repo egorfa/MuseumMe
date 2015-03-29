@@ -28,7 +28,7 @@ public class SplashScreen extends Activity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                startActivity(new Intent(SplashScreen.this, MuseumActivity.class));
+                startActivity(new Intent(SplashScreen.this, TabsActivity.class));
                 finish();
             }
         };

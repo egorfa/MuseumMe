@@ -10,9 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_gravity="top"
+        android:textColor="@color/white"
+        android:background="@color/darkest_gray"
         app:pstsShouldExpand="true"
         app:pstsUnderlineHeight="1px"
-        app:pstsIndicatorHeight="1dp">
+        app:pstsIndicatorHeight="1dp"
+        app:pstsIndicatorColor="@color/blue">
 
     </com.astuetz.PagerSlidingTabStrip >
 

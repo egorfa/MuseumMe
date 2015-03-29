@@ -41,6 +41,12 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".MuseumDescriptionActivity"
+            android:label="MuseumDescriptionActivity">
+
+        </activity>
+
     </application>
 
 </manifest>

@@ -125,13 +125,13 @@ public class Museum implements Parcelable{
 
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
         @Override
-        public Exhibit createFromParcel(Parcel in) {
-            return new Exhibit(in);
+        public Museum createFromParcel(Parcel in) {
+            return new Museum(in);
         }
 
         @Override
-        public Exhibit[] newArray(int size) {
-            return new Exhibit[size];
+        public Museum[] newArray(int size) {
+            return new Museum[size];
         }
     };
 

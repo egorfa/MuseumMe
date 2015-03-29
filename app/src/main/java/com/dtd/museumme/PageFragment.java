@@ -1,12 +1,16 @@
 package com.dtd.museumme;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.actionbarsherlock.app.SherlockFragment;
+
+import java.util.ArrayList;
 
 public class PageFragment extends SherlockFragment {
     static final String ARGUMENT_PAGE_NUMBER = "arg_page_number";
@@ -35,6 +39,22 @@ public class PageFragment extends SherlockFragment {
         switch (pageNumber){
             case 0:
                 view = inflater.inflate(R.layout.list_museums, null);
+                listMuseums = (ListView)view.findViewById(R.id.listMuseums);
+                final ArrayList<Museum> Array = new ArrayList<Museum>();
+                Array.add(new Museum("ММ Арт Музей", "89162442963", "Остоженка 8/35", 0, 0, "Вт-Вс 10:00 - 19:30", "Никаких страшных экспонатов", null));
+                Array.add(new Museum("Пушкинский музей ИЗО", "89162442963", "Красносельская 56", 0, 0, "Вт-Вс 11:00 - 20:30", "Никаких страшных экспонатов", null));
+                MuseumsListAdapter adapter = new MuseumsListAdapter(getActivity(), Array);
+                listMuseums.setAdapter(adapter);
+
+                listMuseums.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Intent intent = new Intent(getSherlockActivity().getBaseContext(), MuseumDescriptionActivity.class);
+                        intent.putExtra("Museum", Array.get(position));
+                        startActivity(intent);
+                    }
+                });
+
                 break;
             case 1:
                 view = inflater.inflate(R.layout.maps_museums, null);

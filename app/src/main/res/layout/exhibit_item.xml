@@ -9,7 +9,7 @@
         android:id="@+id/img"
         android:minHeight="100dp"
         android:layout_alignParentTop="true"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"/>
 
     <ImageView
         android:layout_width="match_parent"

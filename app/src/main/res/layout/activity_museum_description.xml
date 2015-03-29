@@ -3,13 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/darkest_gray">
 
     <com.nirhart.parallaxscroll.views.ParallaxScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black"
-        app:parallax_factor="2">
+        app:parallax_factor="2"
+        android:paddingBottom="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,32 +22,70 @@
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
                 android:id="@+id/museumImg"
+                android:background="@drawable/contentexample_12"
                 android:scaleType="centerCrop" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/black">
+                android:background="@color/darkest_gray">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:text="Заголовок"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/white"
                     android:textSize="25sp"
+                    android:gravity="left"
+                    android:layout_marginLeft="20dp"
                     android:id="@+id/museumTitle"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/blue"
+                    android:textSize="18sp"
+                    android:gravity="left"
+                    android:layout_alignLeft="@+id/museumTitle"
+                    android:layout_below="@+id/museumTitle"
+                    android:id="@+id/museumAddress"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone"
+                    android:textColor="@color/blue"
+                    android:textSize="18sp"
+                    android:gravity="left"
+                    android:layout_alignLeft="@+id/museumTitle"
+                    android:layout_below="@+id/museumAddress"
+                    android:id="@+id/museumPhone"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time"
+                    android:textColor="@color/blue"
+                    android:textSize="18sp"
+                    android:gravity="left"
+                    android:layout_alignLeft="@+id/museumTitle"
+                    android:layout_below="@+id/museumPhone"
+                    android:id="@+id/museumTime"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:layout_below="@+id/museumTitle"
+                    android:layout_below="@+id/museumTime"
                     android:textColor="@color/white"
                     android:gravity="left"
+                    android:layout_alignLeft="@+id/museumTitle"
                     android:textSize="20sp"
-                    android:id="@+id/museumText"/>
+                    android:id="@+id/museumDescription"
+                    android:layout_marginBottom="20dp"/>
 
             </RelativeLayout>
 
