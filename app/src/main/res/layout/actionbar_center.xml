@@ -23,9 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btn_menu"
+        android:background="@drawable/arrow_left"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@android:color/transparent"
         android:layout_centerVertical="true" />
 
 

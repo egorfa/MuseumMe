@@ -7,8 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragment;
 
@@ -58,6 +60,20 @@ public class ListExhibit extends SherlockFragment {
                 Intent intent = new Intent(getActivity(), ExhibitActivity.class);
                 intent.putExtra("Object", Array.get(position));
                 startActivity(intent);
+            }
+        });
+
+        TextView title = (TextView)getSherlockActivity().getActionBar().getCustomView().findViewById(R.id.actionbarTitle);
+        title.setText("Все экспонаты");
+        ImageView leftBurger = (ImageView)getSherlockActivity().getActionBar().getCustomView().findViewById(R.id.btn_menu);
+        leftBurger.setBackground(getResources().getDrawable(R.drawable.left_arrow));
+
+        leftBurger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(EnterKeyActivity.this, MuseumDescriptionActivity.class);
+                //startActivity(intent);
+                getActivity().finish();
             }
         });
 

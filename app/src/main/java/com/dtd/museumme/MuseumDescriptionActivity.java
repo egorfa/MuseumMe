@@ -60,5 +60,19 @@ public class MuseumDescriptionActivity extends Activity {
             }
         });
 
+
+        TextView title = (TextView)getActionBar().getCustomView().findViewById(R.id.actionbarTitle);
+        title.setText("Музей");
+        ImageView leftArrow = (ImageView)getActionBar().getCustomView().findViewById(R.id.btn_menu);
+        leftArrow.setBackground(getResources().getDrawable(R.drawable.left_arrow));
+
+        leftArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MuseumDescriptionActivity.this, TabsActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

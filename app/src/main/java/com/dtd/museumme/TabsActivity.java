@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.astuetz.PagerSlidingTabStrip;
@@ -29,6 +30,12 @@ public class TabsActivity extends SherlockFragmentActivity {
 
         PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.pagerTitleStrip);
         tabs.setViewPager(pager);
+
+        TextView title = (TextView)getSupportActionBar().getCustomView().findViewById(R.id.actionbarTitle);
+        title.setText("Музеи");
+
+        //ActionBarSherlock actionBar = getSupportActionBar();
+        //RelativeLayout viewActionBar = (RelativeLayout) actionBar.getCustomView();
     }
 
     private class CustomFragmentPagerAdapter extends FragmentPagerAdapter {

@@ -1,7 +1,6 @@
 package com.dtd.museumme;
 
 import android.app.Activity;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -57,16 +56,19 @@ public class ExhibitActivity extends Activity {
         title.setText(exhibit.getTitleExhibit());
         text.setText(exhibit.getTextExhibit());
         img.setImageResource(id);
-    }
 
-    public void setFonts (View view) {
-        final String LIGHT_FONT = "fonts/HelveticaNeueCyr-Light.otf";
-        final String NORMAL_FONT = "fonts/Helv-5-Normal.pfb";
-        final String ITALIC_FONT = "fonts/HelveticaNeueCyr-Italic.otf";
-        final String BOLD_FONT = "fonts/HelveticaNeueCyr-Bold.otf";
+        TextView title = (TextView)getActionBar().getCustomView().findViewById(R.id.actionbarTitle);
+        title.setText("Экспонат");
+        ImageView leftArrow = (ImageView)getActionBar().getCustomView().findViewById(R.id.btn_menu);
+        leftArrow.setBackground(getResources().getDrawable(R.drawable.left_arrow));
 
-        Typeface typeface;
-
-        typeface = Typeface.createFromAsset(getAssets(), LIGHT_FONT);
+        leftArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(ExhibitActivity.this, ListExhibit.class);
+                //startActivity(intent);
+                finish();
+            }
+        });
     }
 }
