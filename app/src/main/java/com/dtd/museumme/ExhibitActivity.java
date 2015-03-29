@@ -1,6 +1,7 @@
 package com.dtd.museumme;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,7 @@ public class ExhibitActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exhibit_item);
+
 
         title = (TextView)findViewById(R.id.exhibitTitle);
         text = (TextView)findViewById(R.id.exhibitText);
@@ -52,6 +54,7 @@ public class ExhibitActivity extends Activity {
 
         exhibit = getIntent().getParcelableExtra("Object");
 
+
         int id = getResources().getIdentifier("contentexample_" + exhibit.getImageExhibit(), "drawable", getPackageName());
 
         title.setText(exhibit.getTitleExhibit());
@@ -68,5 +71,14 @@ public class ExhibitActivity extends Activity {
         Typeface typeface;
 
         typeface = Typeface.createFromAsset(getAssets(), LIGHT_FONT);
+    }
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        Intent intent = new Intent(ExhibitActivity.this, MuseumActivity.class);
+        startActivity(intent);
+        finish();
+
     }
 }

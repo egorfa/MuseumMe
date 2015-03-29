@@ -6,6 +6,11 @@
         <item name="android:actionBarStyle">@style/MyAcBr</item>
     </style>
 
+    <style name="NoActionTheme" parent="Theme.Sherlock.Light">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
     <style name="MyAcBr" parent="Widget.Sherlock.Light.ActionBar.Solid.Inverse">
         <item name="android:icon">@android:color/transparent</item>
         <item name="icon">@android:color/transparent</item>

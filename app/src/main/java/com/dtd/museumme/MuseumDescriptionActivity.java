@@ -61,4 +61,14 @@ public class MuseumDescriptionActivity extends Activity {
         });
 
     }
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        /*Intent intent = new Intent(MuseumDescriptionActivity.this, TabsActivity.class);
+        startActivity(intent);*/
+        finish();
+
+    }
+
 }

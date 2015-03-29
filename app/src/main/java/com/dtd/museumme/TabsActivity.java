@@ -61,4 +61,14 @@ public class TabsActivity extends SherlockFragmentActivity {
 
     }
 
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+
+        System.runFinalizersOnExit(true);
+        System.exit(0);
+        finish();
+
+    }
+
 }
