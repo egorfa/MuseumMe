@@ -1,7 +1,6 @@
 package com.dtd.museumme;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -25,7 +24,6 @@ public class ExhibitActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exhibit_item);
-
 
         title = (TextView)findViewById(R.id.exhibitTitle);
         text = (TextView)findViewById(R.id.exhibitText);
@@ -54,7 +52,6 @@ public class ExhibitActivity extends Activity {
 
         exhibit = getIntent().getParcelableExtra("Object");
 
-
         int id = getResources().getIdentifier("contentexample_" + exhibit.getImageExhibit(), "drawable", getPackageName());
 
         title.setText(exhibit.getTitleExhibit());
@@ -62,23 +59,13 @@ public class ExhibitActivity extends Activity {
         img.setImageResource(id);
     }
 
-    public void setFonts (View view) {
-        final String LIGHT_FONT = "fonts/HelveticaNeueCyr-Light.otf";
-        final String NORMAL_FONT = "fonts/Helv-5-Normal.pfb";
-        final String ITALIC_FONT = "fonts/HelveticaNeueCyr-Italic.otf";
-        final String BOLD_FONT = "fonts/HelveticaNeueCyr-Bold.otf";
+        TextView title = (TextView)getActionBar().getCustomView().findViewById(R.id.actionbarTitle);
+        title.setText("Экспонат");
+        ImageView leftArrow = (ImageView)getActionBar().getCustomView().findViewById(R.id.btn_menu);
+        leftArrow.setBackground(getResources().getDrawable(R.drawable.left_arrow));
 
         Typeface typeface;
 
         typeface = Typeface.createFromAsset(getAssets(), LIGHT_FONT);
-    }
-
-    @Override
-    public void onBackPressed(){
-        super.onBackPressed();
-        Intent intent = new Intent(ExhibitActivity.this, MuseumActivity.class);
-        startActivity(intent);
-        finish();
-
     }
 }

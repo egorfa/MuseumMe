@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -39,6 +40,20 @@ public class EnterKeyActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(EnterKeyActivity.this, MuseumActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        TextView title = (TextView)getActionBar().getCustomView().findViewById(R.id.actionbarTitle);
+        title.setText("Авторизация");
+        ImageView leftArrow = (ImageView)getActionBar().getCustomView().findViewById(R.id.btn_menu);
+        leftArrow.setBackground(getResources().getDrawable(R.drawable.left_arrow));
+
+        leftArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(EnterKeyActivity.this, MuseumDescriptionActivity.class);
+                //startActivity(intent);
+                finish();
             }
         });
     }
