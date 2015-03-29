@@ -41,8 +41,10 @@ public class PageFragment extends SherlockFragment {
                 view = inflater.inflate(R.layout.list_museums, null);
                 listMuseums = (ListView)view.findViewById(R.id.listMuseums);
                 final ArrayList<Museum> Array = new ArrayList<Museum>();
-                Array.add(new Museum("ММ Арт Музей", "89162442963", "Остоженка 8/35", 0, 0, "Вт-Вс 10:00 - 19:30", "Никаких страшных экспонатов", null));
-                Array.add(new Museum("Пушкинский музей ИЗО", "89162442963", "Красносельская 56", 0, 0, "Вт-Вс 11:00 - 20:30", "Никаких страшных экспонатов", null));
+                Array.add(new Museum("ММ Арт Музей", "89162442963", "Остоженка 8/35", 0, 0, "Вт-Вс 10:00 - 19:30", getResources().getString(R.string.museum1), null));
+                Array.add(new Museum("Пушкинский музей ИЗО", "89162442963", "Красносельская 56", 0, 0, "Вт-Вс 11:00 - 20:30", getResources().getString(R.string.museum1), null));
+                Array.add(new Museum("Центр Толерантности", "89162442963", "улица Образцова 11, стр.1а", 0, 0, "Вт-Вс 10:00 - 19:30", getResources().getString(R.string.museum1), null));
+                Array.add(new Museum("Музей ДПИ", "89162442963", "Делегатская ул., 3", 0, 0, "Вт-Вс 10:00 - 19:30", getResources().getString(R.string.museum1), null));
                 MuseumsListAdapter adapter = new MuseumsListAdapter(getActivity(), Array);
                 listMuseums.setAdapter(adapter);
 

@@ -36,18 +36,18 @@ public class ListExhibit extends SherlockFragment {
 
         final ArrayList<Exhibit> Array = new ArrayList<Exhibit>();
 
-        Array.add(new Exhibit("Экспонат №1", 1, "Музей", "URL", "Lorem ipsum"));
-        Array.add(new Exhibit("Экспонат №2", 2, "Музей", "URL", "Lorem ipsum"));
-        Array.add(new Exhibit("Экспонат №3", 3, "Музей", "URL", "Lorem ipsum"));
-        Array.add(new Exhibit("Экспонат №4", 4, "Музей", "URL", "Lorem ipsum"));
-        Array.add(new Exhibit("Экспонат №5", 5, "Музей", "URL", "Lorem ipsum"));
-        Array.add(new Exhibit("Экспонат №6", 6, "Музей", "URL", "Lorem ipsum"));
-        Array.add(new Exhibit("Экспонат №7", 7, "Музей", "URL", "Lorem ipsum"));
-        Array.add(new Exhibit("Экспонат №8", 8, "Музей", "URL", "Lorem ipsum"));
-        Array.add(new Exhibit("Экспонат №9", 9, "Музей", "URL", "Lorem ipsum"));
-        Array.add(new Exhibit("Экспонат №10", 10, "Музей", "URL", "Lorem ipsum"));
-        Array.add(new Exhibit("Экспонат №11", 11, "Музей", "URL", "Lorem ipsum"));
-        Array.add(new Exhibit("Экспонат №12", 12, "Музей", "URL", "Lorem ipsum"));
+        Array.add(new Exhibit("Экспонат №1", 1, "Музей", "URL", getResources().getString(R.string.exhibit1)));
+        Array.add(new Exhibit("Экспонат №2", 2, "Музей", "URL", getResources().getString(R.string.exhibit1)));
+        Array.add(new Exhibit("Экспонат №3", 3, "Музей", "URL", getResources().getString(R.string.exhibit1)));
+        Array.add(new Exhibit("Экспонат №4", 4, "Музей", "URL", getResources().getString(R.string.exhibit1)));
+        Array.add(new Exhibit("Экспонат №5", 5, "Музей", "URL", getResources().getString(R.string.exhibit1)));
+        Array.add(new Exhibit("Экспонат №6", 6, "Музей", "URL", getResources().getString(R.string.exhibit1)));
+        Array.add(new Exhibit("Экспонат №7", 7, "Музей", "URL", getResources().getString(R.string.exhibit1)));
+        Array.add(new Exhibit("Экспонат №8", 8, "Музей", "URL", getResources().getString(R.string.exhibit1)));
+        Array.add(new Exhibit("Экспонат №9", 9, "Музей", "URL", getResources().getString(R.string.exhibit1)));
+        Array.add(new Exhibit("Экспонат №10", 10, "Музей", "URL", getResources().getString(R.string.exhibit1)));
+        Array.add(new Exhibit("Экспонат №11", 11, "Музей", "URL", getResources().getString(R.string.exhibit1)));
+        Array.add(new Exhibit("Экспонат №12", 12, "Музей", "URL", getResources().getString(R.string.exhibit1)));
 
         bar.setVisibility(View.GONE);
 
