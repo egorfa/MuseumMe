@@ -6,6 +6,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -36,6 +38,9 @@ public class TabsActivity extends SherlockFragmentActivity {
 
         //ActionBarSherlock actionBar = getSupportActionBar();
         //RelativeLayout viewActionBar = (RelativeLayout) actionBar.getCustomView();
+        ImageView leftArrow = (ImageView)getSherlock().getActionBar().getCustomView().findViewById(R.id.btn_menu);
+        leftArrow.setVisibility(View.INVISIBLE);
+
     }
 
     private class CustomFragmentPagerAdapter extends FragmentPagerAdapter {

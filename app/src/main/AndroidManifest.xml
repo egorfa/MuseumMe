@@ -17,32 +17,38 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MuseumActivity"
-            android:label="@string/app_name" >
+            android:noHistory="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
 
         </activity>
 
         <activity
             android:name=".ExhibitActivity"
-            android:label="ExhibitActivity">
+            android:label="ExhibitActivity"
+            android:screenOrientation="portrait">
 
             </activity>
 
         <activity
             android:name=".EnterKeyActivity"
-            android:label="EnterKeyActivity">
+            android:label="EnterKeyActivity"
+            android:screenOrientation="portrait">
 
         </activity>
 
         <activity
             android:name=".TabsActivity"
-            android:label="MuseumsActivity">
+            android:label="MuseumsActivity"
+            android:screenOrientation="portrait">
 
         </activity>
 
         <activity
             android:theme="@style/NoActionTheme"
             android:name=".SplashScreen"
-            android:label="Museum Me">
+            android:label="Museum Me"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -52,7 +58,8 @@
 
         <activity
             android:name=".MuseumDescriptionActivity"
-            android:label="MuseumDescriptionActivity">
+            android:label="MuseumDescriptionActivity"
+            android:screenOrientation="portrait">
 
         </activity>
 

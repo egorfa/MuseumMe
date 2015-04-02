@@ -118,7 +118,7 @@ public class MuseumActivity extends SherlockFragmentActivity {
         // User chose not to enable Bluetooth.
         if (requestCode == REQUEST_ENABLE_BT
                 && resultCode == Activity.RESULT_CANCELED) {
-            //finish();
+            finish();
 
             scanLeDevice(false);
             return;
